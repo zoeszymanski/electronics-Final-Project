@@ -1,0 +1,90 @@
+ENTITY Final_Project IS
+	PORT (SWT : IN BIT_VECTOR (8 DOWNTO 0);
+			segs2 : OUT BIT_VECTOR (6 DOWNTO 0);
+			segs : OUT BIT_VECTOR (6 DOWNTO 0);
+			BIN : IN BIT_VECTOR (3 DOWNTO 0));
+END Final_Project;
+
+ARCHITECTURE Behavioral OF Final_Project IS
+
+BEGIN
+
+    PROCESS (SWT) 
+    BEGIN 
+	 
+	 cASE SWT IS
+	 
+	WHEN "000000000" => segs <= "0000001";
+		   IF BIN = "0000" THEN segs2 <= "1111110";
+		ELSE segs <= "1111110"; 
+		END IF;
+	WHEN "000000001" => segs <= "1001111";
+			IF BIN = "0001" THEN segs2 <= "1111110";
+		ELSE segs <= "1111110"; 
+		END IF;
+	WHEN "000000011" =>  segs <= "0010010";
+			IF BIN = "0001" THEN segs2 <= "1111110";
+		ELSE segs <= "1111110"; 
+		END IF;
+	WHEN "000000111" => segs <= "0000110";
+			IF BIN = "0001" THEN segs2 <= "1111110"; 
+		ELSE segs <= "1111110"; 
+		END IF;
+	WHEN "000001111" =>  segs <= "1001100";
+			IF BIN = "0001" THEN segs2 <= "1111110" ;
+		ELSE segs <= "1111110"; 
+		END IF;
+	WHEN "000011111" => segs <= "0100100";
+			IF BIN = "0001" THEN segs2 <= "1111110"; 
+		ELSE segs <= "1111110"; 
+		END IF;
+	WHEN "000111111" => segs <= "0100000";
+			IF BIN = "0001" THEN segs2 <= "1111110";
+		ELSE segs <= "1111110"; 
+		END IF;
+	WHEN "001111111" => segs <= "0001101";
+			IF BIN = "0001" THEN segs2 <= "1111110";
+		ELSE segs <= "1111110"; 
+		END IF;
+	WHEN "011111111" => segs <= "0000000";
+			IF BIN = "0001" THEN segs2 <= "1111110"; 
+		ELSE segs <= "1111110"; 
+		END IF;
+	WHEN "111111111" => segs <= "0000100";
+			IF BIN = "0001" THEN segs2 <= "1111110"; 
+		ELSE segs <= "1111110"; 
+		END IF;
+	WHEN "000000010" => segs <= "0001000";
+			IF BIN = "0001" THEN segs2 <= "1111110";
+		ELSE segs <= "1111110"; 
+		END IF;
+	WHEN "000000110" => segs <= "1100000";
+			IF BIN = "0001" THEN segs2 <= "1111110";
+		ELSE segs <= "1111110"; 
+		END IF;
+	WHEN "000001110" => segs <= "0110001";
+			IF BIN = "0001" THEN segs2 <= "1111110";
+		ELSE segs <= "1111110"; 
+		END IF;
+	WHEN "000011110" => segs <= "1000010";
+			IF BIN = "0001" THEN segs2 <= "1111110"; 
+		ELSE segs <= "1111110"; 
+		END IF;
+	WHEN "000111110" => segs <= "0110000";
+			IF BIN = "0001" THEN segs2 <= "1111110";
+		ELSE segs <= "1111110"; 
+		END IF;
+	WHEN "001111110" => segs <= "0110000";
+			IF BIN = "0001" THEN segs2 <= "1111110";
+		ELSE segs <= "1111110"; 
+		END IF;
+		
+	WHEN OTHERS => segs <= "1111110"; 
+	
+	
+	END CASE; 
+END PROCESS; 
+		
+END ARCHITECTURE;	
+		
+			
